@@ -1,0 +1,121 @@
+#experience {
+    /* height: 100vh; */
+    padding-top: 5rem;
+}
+
+.experience-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.front-end{
+    border: 3px solid red;
+    background-color: var(--color-bg-variant);
+    padding: 2.4rem 5rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+}
+
+.front-end:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+    cursor: default;
+    transition: var(--transition);
+}
+
+.back-end {
+    border: 3px solid red;
+    background-color: var(--color-bg-variant);
+    padding: 2.4rem 5rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+}
+.back-end:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+    cursor: default;
+    transition: var(--transition);
+
+}
+
+.experience-container h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+}
+
+.experience-cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.experience-cont article{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.exp-icon {
+    color: var(--color-primary);
+}
+
+/* media queries */
+@media screen and (max-width: 1024px){
+    .experience-container{
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .front-end{
+        width: 80%;
+        padding: 2rem;
+        margin: 0 auto;
+    }
+
+    .back-end {
+        width: 80%;
+        padding: 2rem;
+        margin: 0 auto;
+    }
+
+    .experience-cont {
+        /* gap: 1rem; */
+        padding: 1rem;
+    }
+
+    #experience {
+        /* height: 100vh; */
+        margin-top: 0.5rem;
+    }
+    
+}
+
+
+@media screen and (max-width: 600px){ 
+    .experience-container{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .front-end{
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+
+    .back-end{
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+
+    .icb {
+        display: block;
+        width: 100%;
+    }
+    #experience {
+        /* height: 100vh; */
+        padding-top: 0rem;
+        margin-top: 4rem;
+    }
+}
