@@ -9,6 +9,8 @@ header{
     text-align: center;
     height: 100%;
     position: relative;
+    /* overflow: hidden; */
+
 }
 
 .header-container h1 {
@@ -86,6 +88,63 @@ header{
     font-weight: 300;
 }
 
+.boxes{
+    position: absolute;
+    /* left: 500px; */
+    z-index: -100;
+
+}
+
+.box1 {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgb(160, 160, 38);
+    left: 30%px;
+    top: 150px;
+    animation-name: ball1;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+
+
+}
+
+.box2 {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-color: rgb(160, 160, 38);
+    left: 10%;
+    top: 700px;
+    animation-name: ball2;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+
+
+
+}
+
+.box3 {
+    width: 80px;
+    height:80px;
+    /* border-radius: 50%; */
+    background-color: rgb(160, 160, 38);
+    left: 50%;
+    top: 100px;
+    animation-name: ball3;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+
+
+
+}
+
 
 /* media queries */
 
@@ -109,4 +168,56 @@ header{
         height: 100vh;
     }
 
+}
+
+
+/* animations */
+/* animations */
+/* animations */
+@keyframes ball1 {
+    0%{
+        transform: translateX(700px) scale(0.5) ; background-color: rgb(38, 131, 160)
+    }
+  
+    50%{
+        transform: translateY(650px) scale(0.1) ;background-color: rgb(108, 155, 153)
+    }
+    100%{
+        transform: translateY(-110px) scale(1) ;background-color: rgb(0, 70, 161)
+
+    }
+}
+
+@keyframes ball2 {
+    0%{
+        transform: translateY(-700px) scale(0.7) ;    background-color: rgb(38, 131, 160);
+
+    }
+  
+    50%{
+        transform: translateX(650px) scale(0.1) ;    background-color: rgb(108, 155, 153);
+
+    }
+    100%{
+        transform: translateY(-110px) scale(0.6) ;    background-color: rgb(0, 70, 161);
+
+
+    }
+}
+
+@keyframes ball3 {
+    0%{
+        transform: translateY(700px) scale(0.8) rotate(90deg) ;    background-color: rgb(38, 131, 160);
+
+    }
+  
+    50%{
+        transform: translateX(-850px) scale(0.3) rotate(180deg) ;    background-color: rgb(108, 155, 153);
+
+    }
+    100%{
+        transform: translateY(-50px) scale(1.64) rotate(360deg) ;    background-color: rgb(0, 70, 161);
+
+
+    }
 }
