@@ -34,7 +34,11 @@ const Nav = () => {
         <Route path="/experience" element={<Experience />} />
         <Route path="/project" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/project/des" element={<PortfolioDes/>} />
+        {/* <Route path="/project/des" element={<PortfolioDes/>} /> */}
+        <Route path="/project" element={<PortfolioDes />}>
+          <Route path=":projectId" element={<PortfolioDes />} />
+        </Route>
+
 
         
       </Routes>

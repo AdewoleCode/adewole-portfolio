@@ -10,7 +10,7 @@ import PortfolioDes from '../portfolio-desc/PortfolioDes';
 
 import { Routes, Route, Link } from 'react-router-dom';
 
-const projects = [
+export const projects = [
     {
         id: "01",
         projectName: "cypto web",
@@ -18,25 +18,25 @@ const projects = [
         desc: "entals is an aplication that is designed to heldemonstrates a renting website using the react js fra work.Rentals provides a selection of a product istack jjjj"
     },
     {
-        id: "01",
-        projectName: "cypto web",
+        id: "02",
+        projectName: "ecommerce",
         imgUrl: IMG2,
         desc: "entals is an aplication that is designed to heldemonstrates a renting website using the react js fra work.Rentals provides a selection of a product istack jjjj"
     },
     {
-        id: "01",
+        id: "03",
         projectName: "cypto web",
         imgUrl: IMG3,
         desc: "entals is an aplication that is designed to heldemonstrates a renting website using the react js fra work.Rentals provides a selection of a product istack jjjj"
     },
     {
-        id: "01",
+        id: "04",
         projectName: "cypto web",
         imgUrl: IMG4,
         desc: "entals is an aplication that is designed to heldemonstrates a renting website using the react js fra work.Rentals provides a selection of a product istack jjjj"
     },
     {
-        id: "01",
+        id: "05",
         projectName: "cypto web",
         imgUrl: IMG5,
         desc: "entals is an aplication that is designed to heldemonstrates a renting website using the react js fra work.Rentals provides a selection of a product istack jjjj"
@@ -58,15 +58,19 @@ const Portfolio = () => {
                         return (
 
                             <article className='portfolio-item'>
-                            <div className='portfolio-img'>
-                                <img src={project.imgUrl} alt="web" />
-                            </div>
-                            <h3>{project.projectName}</h3>
-                            <div className="portfolio-cta">
-                                <a href="#" className='btn' target="_blank">Github</a>
-                                <Link to="/project/des" className='btn btn-primary'>More info</Link>
-                            </div>
-                        </article>
+                                <div className='portfolio-img'>
+                                    <img src={project.imgUrl} alt="web" />
+                                </div>
+                                <h3>{project.projectName}</h3>
+                                <div className="portfolio-cta">
+                                    <a href="#" className='btn' target="_blank">Github</a>
+                                    {/* <Link to={`/coin/${coin.id}`} key={coin.id}>
+                                        <CoinItem coins={coin} />
+                                    </Link> */}
+
+                                    <Link to={`/project/${project.id}`} className='btn btn-primary'>More info</Link>
+                                </div>
+                            </article>
                         )
                     })}
 
@@ -74,7 +78,7 @@ const Portfolio = () => {
 
 
 
-                   
+
 
                     {/* <article className='portfolio-item'>
                         <div className='portfolio-img'>
@@ -138,11 +142,11 @@ const Portfolio = () => {
                 </div>
             </section>
 
-            <Routes>
+            {/* <Routes>
                 <Route path="/project/des" element={<PortfolioDes />} />
 
 
-            </Routes>
+            </Routes> */}
         </>
     )
 }
