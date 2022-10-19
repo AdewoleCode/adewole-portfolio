@@ -13,6 +13,7 @@ import Experience from '../experience/Experience';
 import Portfolio from '../portfolio/Portfolio';
 import Contact from '../contact/Contact';
 import PortfolioDes from '../portfolio-desc/PortfolioDes';
+import ProjectDes from '../portfolio-desc/ProjectDes';
 
 const Nav = () => {
   const [activeNav, setActiveNav] = useState('#home')
@@ -34,13 +35,7 @@ const Nav = () => {
         <Route path="/experience" element={<Experience />} />
         <Route path="/project" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
-        {/* <Route path="/project/des" element={<PortfolioDes/>} /> */}
-        <Route path="/project" element={<PortfolioDes />}>
-          <Route path=":projectId" element={<PortfolioDes />} />
-        </Route>
-
-
-        
+          <Route path="/project/:id" element={<PortfolioDes />} />   
       </Routes>
     </>
 

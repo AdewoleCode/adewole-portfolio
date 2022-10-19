@@ -7,44 +7,17 @@ import IMG4 from '.././../assets/portfolio4.jpg';
 import IMG5 from '.././../assets/portfolio5.png';
 import IMG6 from '.././../assets/portfolio6.jpg';
 import PortfolioDes from '../portfolio-desc/PortfolioDes';
+import PortfolioCard from './PortfolioCard';
 
 import { Routes, Route, Link } from 'react-router-dom';
 
-export const projects = [
-    {
-        id: "01",
-        projectName: "cypto web",
-        imgUrl: IMG1,
-        desc: "entals is an aplication that is designed to heldemonstrates a renting website using the react js fra work.Rentals provides a selection of a product istack jjjj"
-    },
-    {
-        id: "02",
-        projectName: "ecommerce",
-        imgUrl: IMG2,
-        desc: "entals is an aplication that is designed to heldemonstrates a renting website using the react js fra work.Rentals provides a selection of a product istack jjjj"
-    },
-    {
-        id: "03",
-        projectName: "cypto web",
-        imgUrl: IMG3,
-        desc: "entals is an aplication that is designed to heldemonstrates a renting website using the react js fra work.Rentals provides a selection of a product istack jjjj"
-    },
-    {
-        id: "04",
-        projectName: "cypto web",
-        imgUrl: IMG4,
-        desc: "entals is an aplication that is designed to heldemonstrates a renting website using the react js fra work.Rentals provides a selection of a product istack jjjj"
-    },
-    {
-        id: "05",
-        projectName: "cypto web",
-        imgUrl: IMG5,
-        desc: "entals is an aplication that is designed to heldemonstrates a renting website using the react js fra work.Rentals provides a selection of a product istack jjjj"
-    },
-]
-
+import Projects from '../../helper/Projects';
+import { useParams } from 'react-router-dom';
 
 const Portfolio = () => {
+
+    let {id} = useParams()
+    const projectL = Projects[id]
     return (
 
         <>
@@ -54,101 +27,17 @@ const Portfolio = () => {
 
                 <div className="container portfolio-container">
 
-                    {projects.map(project => {
+                    {Projects.map((project, index) => {
                         return (
-
-                            <article className='portfolio-item'>
-                                <div className='portfolio-img'>
-                                    <img src={project.imgUrl} alt="web" />
-                                </div>
-                                <h3>{project.projectName}</h3>
-                                <div className="portfolio-cta">
-                                    <a href="#" className='btn' target="_blank">Github</a>
-                                    {/* <Link to={`/coin/${coin.id}`} key={coin.id}>
-                                        <CoinItem coins={coin} />
-                                    </Link> */}
-
-                                    <Link to={`/project/${project.id}`} className='btn btn-primary'>More info</Link>
-                                </div>
-                            </article>
+                            <PortfolioCard index={index} image={project.imgUrl} name={project.projectName} />
                         )
                     })}
 
 
-
-
-
-
-
-                    {/* <article className='portfolio-item'>
-                        <div className='portfolio-img'>
-                            <img src={IMG1} alt="web" />
-                        </div>
-                        <h3>this is the name of the project</h3>
-                        <div className="portfolio-cta">
-                            <a href="#" className='btn' target="_blank">Github</a>
-                            <a href="#" className='btn btn-primary'>More Info</a>
-                        </div>
-                    </article>
-
-
-                    <article className='portfolio-item'>
-                        <div className='portfolio-img'>
-                            <img src={IMG1} alt="web" />
-                        </div>
-                        <h3>this is the name of the project</h3>
-                        <div className="portfolio-cta">
-                            <a href="#" className='btn' target="_blank">Github</a>
-                            <a href="#" className='btn btn-primary'>LMore Info</a>
-                        </div>
-                    </article> */}
-
-
-                    {/* <article className='portfolio-item'>
-                        <div className='portfolio-img'>
-                            <img src={IMG1} alt="web" />
-                        </div>
-                        <h3>this is the name of the project</h3>
-                        <div className="portfolio-cta">
-                            <a href="#" className='btn' target="_blank">Github</a>
-                            <a href="#" className='btn btn-primary' >More Info</a>
-                        </div>
-                    </article> */}
-
-
-                    {/* <article className='portfolio-item'>
-                        <div className='portfolio-img'>
-                            <img src={IMG1} alt="web" />
-                        </div>
-                        <h3>this is the name of the project</h3>
-                        <div className="portfolio-cta">
-                            <a href="#" className='btn' target="_blank">Github</a>
-                            <a href="#" className='btn btn-primary'>More Info</a>
-                        </div>
-                    </article>
-
-
-                    <article className='portfolio-item'>
-                        <div className='portfolio-img'>
-                            <img src={IMG1} alt="web" />
-                        </div>
-                        <h3>this is the name of the project</h3>
-                        <div className="portfolio-cta">
-                            <a href="#" className='btn' target="_blank">Github</a>
-                            <a href="#" className='btn btn-primary' >More Info</a>
-                        </div>
-                    </article> */}
-
                 </div>
             </section>
-
-            {/* <Routes>
-                <Route path="/project/des" element={<PortfolioDes />} />
-
-
-            </Routes> */}
         </>
     )
-}
+} 
 
 export default Portfolio
